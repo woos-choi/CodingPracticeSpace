@@ -14,6 +14,12 @@ using namespace std;
 *
 */
 
+/* 실수포인트
+*  1. cnt를 0으로 시작한 것 -> 이미 출금을 한 상태에서 시작한 것이기 때문에 cnt를 1로 시작했어야 함
+*  2. 마지막에 인출된 금액에 딱 맞게 사용한 경우 cnt++을 하고, temp = min으로 초기화했는데 이러면 마지막날이 아니게 됨 -> 마지막날이 아닐때만 하게 변경
+*  3. result를 987654321로 둔 것 -> n이 100000이고 m의 최댓값이 10000이였으니까 10의 9승인데 result는 max case보다 작음 
+*/
+
 int main() {
 
 	ios::sync_with_stdio(false);
@@ -76,5 +82,6 @@ int main() {
 	}
 	
 	cout << result;
+
 
 }
