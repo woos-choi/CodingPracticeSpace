@@ -1,4 +1,5 @@
 #include <string>
+#include <climits>
 #include <memory.h>
 #include <vector>
 #include <stdlib.h>
@@ -41,7 +42,7 @@ int main() {
 	}
 
 	//cout << left << " " << right << '\n';
-	long long int result = 123456000000000000LL, mid;
+	long long int result = LLONG_MAX, mid;
 
 	while (left <= right) {
 		mid = (left + right) / 2;
@@ -52,6 +53,13 @@ int main() {
 		for (int i = 0; i < v.size(); i++) {
 			long long int m_hp = v[i].hp, m_atk = v[i].atk;
 			if (v[i].type == 1) {
+
+				/*
+				* 실수 포인트
+				* 1. 여기를 while로 구현하면 시간 초과가 생길 수 있음 -> 나눗셈으로 가능할지 안할지 계산이 가능함
+				* 2. 몬스터와 싸운 이후에 내 체력을 계산할 때 몬스터가 때릴 수 있는 횟수가 아니라 내가 몬스터를 때린 횟수보다 1 작은 값으로 떄리는게 맞음
+				* 3. result의 initial 값이 매우 커야함 -> #include<climits>에 있는 LLONG_MAX를 사용하면 됨
+				*/
 
 				long long int t_1;
 				if (m_hp % h_atk == 0) t_1 = m_hp / h_atk;
