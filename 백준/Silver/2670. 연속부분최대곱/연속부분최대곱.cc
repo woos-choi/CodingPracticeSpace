@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <stack>
 #include <vector>
 #include <algorithm>
 
@@ -10,7 +8,8 @@ using namespace std;
 * --------- 고민 과정 ---------
 * 처음에는 증가하는 부분 수열의 느낌으로 가려고 했음
 * 그런데 이 문제는 연속성을 요구한다는 것이 문제..
-* 숫자가 연속적으로 곱해졌을 때 1보다 작은 숫자가 곱해지면 작아짐..
+* 
+* 그냥 브루트포스로 풀었더니 풀리네?
 * 
 */
 
