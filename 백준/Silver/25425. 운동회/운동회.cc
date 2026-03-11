@@ -26,7 +26,7 @@ int main() {
 
 	int min, max;
 	min = n - ((n * m) - a) / m;
-	if (a < n) max = (a - k) + 1;
+	if (a < (n - k)) max = (a - k) + 1;
 	else max = n;
 
 	cout << max << " " << min;
