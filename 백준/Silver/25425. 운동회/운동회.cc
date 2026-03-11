@@ -25,9 +25,22 @@ int main() {
 	int a, k; cin >> a >> k;
 
 	int min, max;
-	min = n - ((n * m) - a) / m;
-	if (a < (n - k)) max = (a - k) + 1;
-	else max = n;
+	
+	int temp = a - k; //현재 다른 팀에 남아 있는 인원 수
+	
+	if (temp >= n) {
+		max = n;
+		min = temp / m;
+		if (temp % m > 0) min += 1;
+		min += 1;
+	}
+
+	else {
+		max = temp + 1;
+		min = temp / m;
+		if (temp % m > 0) min += 1;
+		min += 1;
+	}
 
 	cout << max << " " << min;
 
