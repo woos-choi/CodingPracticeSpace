@@ -21,11 +21,10 @@ int main() {
     min = temp / m + 1;
     if (temp % m != 0) min += 1;
 
-    if (temp >= n) max = 30;
+    if (temp >= n - 1) max = 30;
     else max = temp + 1;
 
     cout << max << " " << min;
-
 
 
 
